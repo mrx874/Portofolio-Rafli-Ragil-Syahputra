@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Portofolio - Rafli Ragil Syahputra</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f5f7fa;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        header {
+            background: #111827;
+            color: white;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h2 {
+            color: #60a5fa;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #60a5fa;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, #111827, #1e3a8a);
+            color: white;
+            padding: 50px 20px;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #60a5fa;
+        }
+
+        .hero h3 {
+            font-size: 23px;
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            color: #d1d5db;
+            font-size: 18px;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 30px;
+            background: #2563eb;
+            color: white;
+            padding: 13px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        /* ================= SECTION ================= */
+
+        section {
+            padding: 80px 10%;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 40px;
+            color: #111827;
+        }
+
+        /* ================= ABOUT ================= */
+
+        .about {
+            background: white;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+            font-size: 17px;
+            color: #4b5563;
+        }
+
+        /* ================= EDUCATION ================= */
+
+        .education {
+            background: #f5f7fa;
+        }
+
+        .education-card {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .education-card h3 {
+            color: #2563eb;
+            margin-bottom: 5px;
+        }
+
+        .education-card .year {
+            color: #6b7280;
+            margin-bottom: 15px;
+        }
+
+        /* ================= SKILLS ================= */
+
+        .skills {
+            background: white;
+        }
+
+        .skills-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .skill {
+            background: #f3f4f6;
+            padding: 14px 22px;
+            border-radius: 8px;
+            border-left: 4px solid #2563eb;
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+
+        /* ================= EXPERIENCE ================= */
+
+        .experience {
+            background: #f5f7fa;
+        }
+
+        .experience-card {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .experience-card h3 {
+            color: #2563eb;
+            margin-bottom: 5px;
+        }
+
+        .experience-card h4 {
+            margin-bottom: 5px;
+        }
+
+        .experience-date {
+            color: #6b7280;
+            margin-bottom: 20px;
+        }
+
+        .experience-card ul {
+            padding-left: 20px;
+        }
+
+        .experience-card li {
+            margin-bottom: 10px;
+        }
+
+        /* ================= PROJECT ================= */
+
+        .projects {
+            background: white;
+        }
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .project {
+            background: #f9fafb;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+        }
+
+        /* TEMPAT GAMBAR PROJECT */
+
+        .project-image {
+            width: 100%;
+            height: 210px;
+            background: #dbeafe;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #2563eb;
+            font-size: 18px;
+            font-weight: bold;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-content h3 {
+            color: #2563eb;
+            margin-bottom: 10px;
+        }
+
+        .project-content p {
+            color: #4b5563;
+        }
+
+        /* ================= CONTACT ================= */
+
+        .contact {
+            background: #111827;
+            color: white;
+            text-align: center;
+        }
+
+        .contact h2 {
+            color: white;
+        }
+
+        .contact p {
+            margin-bottom: 8px;
+            color: #d1d5db;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #0b1120;
+            color: #9ca3af;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 768px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 7px;
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            .hero h3 {
+                font-size: 19px;
+            }
+
+            section {
+                padding: 60px 6%;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- ================= NAVIGASI ================= -->
+
+    <header>
+
+        <h2>Rafli.dev</h2>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">Tentang</a>
+            <a href="#experience">Pengalaman</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Project</a>
+            <a href="#contact">Kontak</a>
+        </nav>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h1>
+                Halo, saya <span>Rafli Ragil Syahputra</span>
+            </h1>
+
+            <h3>
+                Automation Engineering | PLC | Industrial Automation
+            </h3>
+
+            <p>
+                Lulusan D4 Teknologi Rekayasa Otomasi dengan pengalaman
+                dalam PLC, otomasi industri, sistem kelistrikan,
+                sistem kontrol, instrumentasi, dan pengembangan IoT.
+            </p>
+
+            <a href="#projects" class="button">
+                Lihat Project
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= TENTANG SAYA ================= -->
+
+    <section class="about" id="about">
+
+        <h2>Tentang Saya</h2>
+
+        <div class="about-content">
+
+            <p>
+                Saya adalah lulusan Sarjana Terapan (D4) Teknologi
+                Rekayasa Otomasi dari Universitas Negeri Jakarta
+                dengan IPK 3.46 / 4.00.
+            </p>
+
+            <br>
+
+            <p>
+                Memiliki pengalaman langsung dalam bidang PLC,
+                otomasi industri, sistem kelistrikan, sistem kontrol,
+                instrumentasi, dan IoT. Saya memiliki ketertarikan
+                pada pengembangan sistem otomasi serta pemecahan
+                masalah teknis di lingkungan industri.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PENDIDIKAN ================= -->
+
+    <section class="education">
+
+        <h2>Pendidikan</h2>
+
+        <div class="education-card">
+
+            <h3>
+                Sarjana Terapan (D4) Teknologi Rekayasa Otomasi
+            </h3>
+
+            <p>
+                Universitas Negeri Jakarta
+            </p>
+
+            <p class="year">
+                2022 – 2026
+            </p>
+
+            <strong>
+                IPK: 3.46 / 4.00
+            </strong>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PENGALAMAN ================= -->
+
+    <section class="experience" id="experience">
+
+        <h2>Pengalaman</h2>
+
+        <div class="experience-card">
+
+            <h3>
+                Manufacturing Engineering Intern
+            </h3>
+
+            <h4>
+                PT Mesin Isuzu Indonesia
+            </h4>
+
+            <p class="experience-date">
+                Feb 2025 – Jul 2025
+            </p>
+
+            <ul>
+
+                <li>
+                    Mendesain dan mengimplementasikan sistem
+                    pokayoke gasket EGR 4H untuk mencegah kesalahan
+                    proses pemasangan dan meningkatkan konsistensi produksi.
+                </li>
+
+                <li>
+                    Membuat gambar kelistrikan dan layout sistem
+                    menggunakan AutoCAD untuk mendukung proyek
+                    dan dokumentasi engineering.
+                </li>
+
+                <li>
+                    Memprogram dan mengonfigurasi logika kontrol PLC
+                    sesuai kebutuhan operasional dan standar keselamatan.
+                </li>
+
+                <li>
+                    Merakit dan melakukan wiring panel kontrol listrik
+                    untuk sistem pokayoke sesuai standar dan spesifikasi teknis.
+                </li>
+
+                <li>
+                    Melakukan pengujian sistem, troubleshooting,
+                    dan commissioning sebelum diterapkan pada proses produksi.
+                </li>
+
+                <li>
+                    Melakukan monitoring dan pengendalian proses
+                    Wastewater Treatment (WWT).
+                </li>
+
+                <li>
+                    Berhasil menerapkan sistem pokayoke pada lini produksi,
+                    meningkatkan keselamatan operator serta mengurangi
+                    cacat dalam proses perakitan.
+                </li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SKILLS ================= -->
+
+    <section class="skills" id="skills">
+
+        <h2>Technical Skills</h2>
+
+        <div class="skills-container">
+
+            <div class="skill">
+                Pemrograman & Troubleshooting PLC
+            </div>
+
+            <div class="skill">
+                Troubleshooting Kelistrikan
+            </div>
+
+            <div class="skill">
+                Pembacaan Wiring Diagram
+            </div>
+
+            <div class="skill">
+                Perakitan Panel Kontrol Listrik
+            </div>
+
+            <div class="skill">
+                Pengukuran & Pengujian Kelistrikan
+            </div>
+
+            <div class="skill">
+                Sistem Pneumatik
+            </div>
+
+            <div class="skill">
+                AutoCAD 2D Drafting & 3D Modeling
+            </div>
+
+            <div class="skill">
+                Internet of Things (IoT)
+            </div>
+
+            <div class="skill">
+                Microsoft Excel
+            </div>
+
+            <div class="skill">
+                Microsoft Word
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PROJECT ================= -->
+
+    <section class="projects" id="projects">
+
+        <h2>Project Saya</h2>
+
+        <div class="projects-container">
+
+
+            <!-- PROJECT 1 -->
+
+            <div class="project">
+
+                <div class="project-image">
+
+                    <!--
+                    GANTI "project1.jpg" DENGAN FOTO PROJECT KAMU
+
+                    Contoh:
+                    <img src="images/project1.jpg"
+                         alt="Project Pembangkit Listrik Hybrid">
+                    -->
+
+                    FOTO PROJECT 1
+
+                </div>
+
+                <div class="project-content">
+
+                    <h3>
+                        Pembangkit Listrik Hybrid Tenaga Surya & Angin
+                    </h3>
+
+                    <p>
+                        Proyek akhir berupa sistem pembangkit listrik
+                        hybrid tenaga surya dan angin yang terintegrasi
+                        IoT dengan kontrol distribusi daya berbasis
+                        Fuzzy Logic.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROJECT 2 -->
+
+            <div class="project">
+
+                <div class="project-image">
+
+                    <!--
+                    GANTI "project2.jpg" DENGAN FOTO PROJECT KAMU
+
+                    Contoh:
+                    <img src="images/project2.jpg"
+                         alt="Pokayoke Gasket EGR">
+                    -->
+
+                    FOTO PROJECT 2
+
+                </div>
+
+                <div class="project-content">
+
+                    <h3>
+                        Pokayoke Gasket EGR 4H
+                    </h3>
+
+                    <p>
+                        Sistem pokayoke berbasis PLC dan pneumatik
+                        untuk mencegah kesalahan proses pemasangan
+                        gasket EGR dan meningkatkan konsistensi produksi.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROJECT 3 -->
+
+            <div class="project">
+
+                <div class="project-image">
+
+                    <!--
+                    GANTI "project3.jpg" DENGAN FOTO PROJECT KAMU
+
+                    Contoh:
+                    <img src="images/project3.jpg"
+                         alt="Project Wastewater Treatment">
+                    -->
+
+                    FOTO PROJECT 3
+
+                </div>
+
+                <div class="project-content">
+
+                    <h3>
+                        Wastewater Treatment Monitoring
+                    </h3>
+
+                    <p>
+                        Pengalaman melakukan monitoring dan pengendalian
+                        proses Wastewater Treatment (WWT) untuk mendukung
+                        keandalan operasional dan kepatuhan terhadap
+                        standar lingkungan.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SOFT SKILLS ================= -->
+
+    <section class="skills">
+
+        <h2>Soft Skills</h2>
+
+        <div class="skills-container">
+
+            <div class="skill">
+                Pengembangan Berkelanjutan
+            </div>
+
+            <div class="skill">
+                Analisis & Pemecahan Masalah
+            </div>
+
+            <div class="skill">
+                Mudah Beradaptasi
+            </div>
+
+            <div class="skill">
+                Kerja Sama Tim
+            </div>
+
+            <div class="skill">
+                Mampu Bekerja Secara Mandiri
+            </div>
+
+            <div class="skill">
+                Etos Kerja Tinggi & Integritas
+            </div>
+
+            <div class="skill">
+                Komunikasi Efektif
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= KONTAK ================= -->
+
+    <section class="contact" id="contact">
+
+        <h2>Hubungi Saya</h2>
+
+        <p>
+            📧 rafliragil10@gmail.com
+        </p>
+
+        <p>
+            📱 +62 896 50081679
+        </p>
+
+        <p>
+            📍 Bekasi Utara, Jawa Barat, Indonesia
+        </p>
+
+        <a
+            href="mailto:rafliragil10@gmail.com"
+            class="button"
+        >
+            Kirim Email
+        </a>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 Rafli Ragil Syahputra. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+</body>
+</html>
